@@ -8,7 +8,8 @@ workflows:
     scripts:
       - name: Generate Android platform files
         script: |
-          flutter create --platforms=android .
+          flutter create --platforms=android --project-name sales_app /tmp/scaffold
+          cp -R /tmp/scaffold/android "$CM_BUILD_DIR/android"
       - name: Get Flutter packages
         script: |
           flutter pub get
